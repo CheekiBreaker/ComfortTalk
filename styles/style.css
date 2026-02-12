@@ -37,15 +37,14 @@ html {
 }
 
 body {
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   line-height: 1.5;
   color: var(--color-gray-900);
 }
 
 .container {
-  background-color: #fffbe4;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
@@ -86,7 +85,6 @@ body {
 }
 
 @keyframes blob {
-
   0%,
   100% {
     transform: translate(0, 0) scale(1);
@@ -144,9 +142,11 @@ body {
 .logo-icon {
   width: 2.5rem;
   height: 2.5rem;
-  background: linear-gradient(to bottom right,
-      var(--color-blue-500),
-      var(--color-cyan-400));
+  background: linear-gradient(
+    to bottom right,
+    var(--color-blue-500),
+    var(--color-cyan-400)
+  );
   border-radius: 9999px;
   display: flex;
   align-items: center;
@@ -317,17 +317,9 @@ body {
 }
 
 .hero {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to bottom right,
-      var(--color-blue-50),
-      var(--color-white),
-      var(--color-cyan-50));
-  overflow: hidden;
-  padding: 5rem 0;
+  min-height: 100vh;
+  height: auto; /* позволяет растягиваться при необходимости */
+  padding-top: 6rem; /* компенсируем высоту фиксированного хедера */
 }
 
 .hero-presents {
@@ -500,6 +492,7 @@ body {
 }
 
 .about {
+  padding-top: 6rem;
   padding: 5rem 0;
   background-color: var(--color-white);
 }
@@ -525,9 +518,11 @@ body {
 .image-glow {
   position: absolute;
   inset: -1rem;
-  background: linear-gradient(to right,
-      var(--color-blue-200),
-      var(--color-cyan-200));
+  background: linear-gradient(
+    to right,
+    var(--color-blue-200),
+    var(--color-cyan-200)
+  );
   border-radius: 1.5rem;
   filter: blur(2rem);
   opacity: 0.3;
@@ -593,7 +588,6 @@ body {
   color: black;
 }
 
-
 .text-large {
   font-size: 1.125rem;
   color: var(--color-gray-600);
@@ -650,9 +644,11 @@ mark {
 
 .features {
   padding: 5rem 0;
-  background: linear-gradient(to bottom right,
-      var(--color-gray-50),
-      var(--color-blue-50));
+  background: linear-gradient(
+    to bottom right,
+    var(--color-gray-50),
+    var(--color-blue-50)
+  );
 }
 
 .section-header {
@@ -720,39 +716,51 @@ mark {
 }
 
 .gradient-blue {
-  background: linear-gradient(to right,
-      var(--color-blue-500),
-      var(--color-blue-600));
+  background: linear-gradient(
+    to right,
+    var(--color-blue-500),
+    var(--color-blue-600)
+  );
 }
 
 .gradient-cyan {
-  background: linear-gradient(to right,
-      var(--color-cyan-500),
-      var(--color-cyan-600));
+  background: linear-gradient(
+    to right,
+    var(--color-cyan-500),
+    var(--color-cyan-600)
+  );
 }
 
 .gradient-teal {
-  background: linear-gradient(to right,
-      var(--color-teal-500),
-      var(--color-teal-600));
+  background: linear-gradient(
+    to right,
+    var(--color-teal-500),
+    var(--color-teal-600)
+  );
 }
 
 .gradient-blue-cyan {
-  background: linear-gradient(to right,
-      var(--color-blue-500),
-      var(--color-cyan-500));
+  background: linear-gradient(
+    to right,
+    var(--color-blue-500),
+    var(--color-cyan-500)
+  );
 }
 
 .gradient-cyan-teal {
-  background: linear-gradient(to right,
-      var(--color-cyan-500),
-      var(--color-teal-500));
+  background: linear-gradient(
+    to right,
+    var(--color-cyan-500),
+    var(--color-teal-500)
+  );
 }
 
 .gradient-teal-blue {
-  background: linear-gradient(to right,
-      var(--color-teal-500),
-      var(--color-blue-500));
+  background: linear-gradient(
+    to right,
+    var(--color-teal-500),
+    var(--color-blue-500)
+  );
 }
 
 .feature-card-title {
@@ -863,9 +871,11 @@ mark {
 }
 
 .reason-icon {
-  background: linear-gradient(to bottom right,
-      var(--color-blue-500),
-      var(--color-cyan-500));
+  background: linear-gradient(
+    to bottom right,
+    var(--color-blue-500),
+    var(--color-cyan-500)
+  );
   width: 4rem;
   height: 4rem;
   border-radius: 1rem;
@@ -935,9 +945,11 @@ mark {
   top: -1.25rem;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(to right,
-      var(--color-blue-600),
-      var(--color-cyan-500));
+  background: linear-gradient(
+    to right,
+    var(--color-blue-600),
+    var(--color-cyan-500)
+  );
   color: var(--color-white);
   padding: 0.5rem 1.5rem;
   border-radius: 9999px;
@@ -991,9 +1003,11 @@ mark {
 
 .testimonials {
   padding: 5rem 0;
-  background: linear-gradient(to bottom right,
-      var(--color-blue-50),
-      var(--color-cyan-50));
+  background: linear-gradient(
+    to bottom right,
+    var(--color-blue-50),
+    var(--color-cyan-50)
+  );
 }
 
 .testimonials-grid {
@@ -1075,6 +1089,125 @@ mark {
 
 .read-more:hover {
   color: var(--color-blue-700);
+}
+
+.faq {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom right, #f0f9ff, #ecf0f1);
+}
+
+.faq-grid {
+  align-items: start;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.faq-item {
+  background-color: var(--color-white);
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid transparent;
+}
+
+.faq-item:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-blue-200);
+  transform: translateY(-4px);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: var(--color-white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.faq-question:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.05),
+    rgba(34, 211, 238, 0.05)
+  );
+}
+
+.faq-question svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-blue-600);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-question svg {
+  transform: rotate(180deg);
+  color: var(--color-cyan-500);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background-color: var(--color-white);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.faq-answer p {
+  color: var(--color-gray-600);
+  line-height: 1.75;
+  margin: 0;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    padding: 1.25rem;
+  }
+
+  .faq-answer {
+    font-size: 0.95rem;
+  }
 }
 
 .footer {
@@ -1298,5 +1431,130 @@ mark {
 @media (min-width: 768px and max-width:1024px) {
   .section-title {
     font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.875rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .stat-card {
+    min-width: 140px;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .stats-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .pricing-card-popular {
+    transform: scale(1.02);
+  }
+
+  .hero-buttons {
+    gap: 0.75rem;
+  }
+
+  .btn-large {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .feature-card-title {
+    font-size: 1.25rem;
+  }
+
+  .stats-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stat-card {
+    min-width: 160px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 1rem 0;
+  }
+
+  .hero {
+    min-height: 80vh;
+    padding: 3rem 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .how-to-join {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 }
