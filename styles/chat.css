@@ -1,0 +1,320 @@
+  /* Основные стили контейнера */
+  .chat-widget {
+    width: 100%;
+    max-width: 360px; /* Ширина мобильного экрана */
+    height: 500px;
+    background-color: #eef2f5; /* Цвет фона как в Telegram */
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+  }
+
+  /* Заголовок чата (декоративный) */
+  .chat-header {
+    background: #fff;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+  }
+  .chat-header-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .chat-header-info h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  .chat-header-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #4caf50; /* Зеленый "онлайн" */
+  }
+
+  /* Область сообщений */
+  .chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scroll-behavior: smooth;
+    /* Скрываем скроллбар для красоты */
+    scrollbar-width: none; 
+  }
+  .chat-messages::-webkit-scrollbar { 
+    display: none; 
+  }
+
+  /* Пузыри сообщений */
+  .message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    position: relative;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: popIn 0.3s forwards;
+    word-wrap: break-word;
+  }
+
+  @keyframes popIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Входящее сообщение (слева) */
+  .message.incoming {
+    align-self: flex-start;
+    background-color: #ffffff;
+    color: #000;
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  /* Исходящее сообщение (справа) */
+  .message.outgoing {
+    align-self: flex-end;
+    background-color: #effdde; /* Светло-зеленый Telegram */
+    color: #000;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  .message-name {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .incoming .message-name { color: #2575fc; }
+  .outgoing .message-name { color: #2ecc71; text-align: right; }
+
+  .message-time {
+    font-size: 10px;
+    color: #999;
+    float: right;
+    margin-left: 8px;
+    margin-top: 6px;
+  }
+
+  /* Анимация "Печатает..." */
+  .typing-indicator {
+    align-self: flex-start;
+    background-color: #ffffff;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border-bottom-left-radius: 2px;
+    display: none; /* Скрыто по умолчанию */
+    gap: 4px;
+    width: fit-content;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    background-color: #b0b0b0;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+  }
+
+  .dot:nth-child(1) { animation-delay: -0.32s; }
+  .dot:nth-child(2) { animation-delay: -0.16s; }
+
+  @keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+  }
+
+  /* Градиент маски снизу для эффекта бесконечности */
+  .chat-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to top, #eef2f5, transparent);
+    pointer-events: none;
+  }
+  
+  /* Кнопка рестарта (для отладки или если цикл завис) */
+  .debug-restart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+    opacity: 0.3;
+  }
+  .debug-restart:hover { opacity: 1; }
+
+
+     /* --- Контейнер для центрирования телефона внутри карточки --- */
+      .service-card:has(.phone-mockup) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      /* --- 3D Телефон Mockup --- */
+      .phone-mockup {
+        animation: fadeInUp 0.8s ease-out;
+        position: relative;
+        width: 300px; /* Ширина телефона */
+        height: 500px; /* Высота телефона */
+        margin: 100px auto;
+        perspective: 1000px; /* Глубина 3D */
+        z-index: 1;
+      }
+
+      /* Корпус телефона */
+      .phone-frame {
+        width: 100%;
+        height: 100%;
+        background: #1a1a1a; /* Цвет корпуса (черный) */
+        border-radius: 40px;
+        padding: 12px; /* Рамка вокруг экрана */
+        box-sizing: border-box;
+        position: relative;
+        box-shadow:
+          inset 0 0 0 2px #333,
+          /* Внутренняя обводка */ 0 20px 50px rgba(0, 0, 0, 0.3); /* Тень от корпуса */
+
+        /* 3D Поворот */
+        transform: rotateY(-15deg) rotateX(5deg);
+        transition: transform 0.5s ease;
+        transform-style: preserve-3d;
+        border: 1px solid #444;
+      }
+
+      /* Эффект при наведении на карточку - телефон "выпрямляется" чуть-чуть */
+      /* .service-card:hover .phone-frame {
+        transform: rotateY(-5deg) rotateX(2deg);
+      } */
+
+      /* Вырез (челка) для динамика */
+      .phone-notch {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 25px;
+        background: #1a1a1a;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        z-index: 10;
+      }
+
+      /* Экран (контейнер для чата) */
+      .phone-screen {
+        width: 100%;
+        height: 100%;
+        background: #eef2f5; /* Цвет фона чата */
+        border-radius: 30px;
+        overflow: hidden; /* Обрезает чат по краям экрана */
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Адаптация вашего виджета чата под размер экрана телефона */
+      .phone-screen .chat-widget {
+        width: 100%;
+        height: 100%;
+        max-width: none; /* Сбрасываем ограничения */
+        max-height: none;
+        border-radius: 30px;
+        box-shadow: none; /* Убираем тень виджета, т.к. есть тень телефона */
+        border: none;
+        margin: 0;
+      }
+
+      /* Блик на экране (реализм) */
+      .phone-glare {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.15) 0%,
+          rgba(255, 255, 255, 0.05) 40%,
+          transparent 60%
+        );
+        border-radius: 40px;
+        pointer-events: none; /* Чтобы можно было кликать сквозь блик */
+        z-index: 20;
+        mix-blend-mode: overlay;
+      }
+
+      /* Тень под телефоном (отдельный элемент для объема) */
+      .phone-shadow {
+        position: absolute;
+        bottom: -20px;
+        left: 10%;
+        width: 80%;
+        height: 20px;
+        background: rgba(0, 0, 0, 0.2);
+        filter: blur(10px);
+        border-radius: 50%;
+        transform: rotateX(60deg);
+        z-index: 0;
+        transition: all 0.5s ease;
+      }
+
+      .service-card:hover .phone-shadow {
+        transform: rotateX(60deg) scale(0.9);
+        opacity: 0.8;
+      }
+
+      /* Адаптив: на мобильных убираем 3D, чтобы было удобно читать */
+      @media (max-width: 768px) {
+        .phone-mockup {
+          width: 260px;
+          height: 520px;
+          transform: none; /* Убираем поворот */
+        }
+
+        .phone-frame {
+          transform: none !important; /* Отменяем поворот на мобильных */
+          border-radius: 30px;
+          padding: 8px;
+        }
+
+        .phone-notch {
+          width: 100px;
+          height: 20px;
+        }
+
+        .phone-glare {
+          display: none; /* Убираем блик на мобильных для производительности */
+        }
+      }
