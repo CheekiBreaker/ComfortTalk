@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -8,9 +8,8 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles/meme.css" />
     <link rel="stylesheet" href="styles/mestyle.css" />
-    <link rel="stylesheet" href="styles/chat.css" />
+    <link rel="stylesheet" href="styles/chat.css">
   </head>
   <body>
     <!-- Header -->
@@ -131,7 +130,6 @@
     <section id="services" class="services">
       <div class="container">
         <h2 class="section-title">Мои услуги</h2>
-
         <div class="services-grid">
           <div class="service-card fade-in flexable">
             <div class="service-icon">👥</div>
@@ -188,7 +186,9 @@
             <a href="#contact" class="service-button">Записаться</a>
           </div>
 
-          <div class=" "></div>
+          <div class=" ">
+          
+          </div>
 
           <div class="service-card fade-in flexable">
             <div class="service-icon">💬</div>
@@ -219,7 +219,6 @@
             <a href="./ComfortTalk.html" class="service-button">Подробнее</a>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -366,65 +365,6 @@
             </form>
           </div>
         </div>
-        <!--  -->
-        <div class="meme-quiz">
-          <div class="meme-header">
-            <h1>🎭 Meme English Proficiency Test</h1>
-            <p class="subtitle">
-              20 вопросов • Грамматика • Словарь • Аудирование • Письмо
-            </p>
-            <div class="progress-bar">
-              <div class="progress-fill" id="progress"></div>
-            </div>
-            <div class="timer">Вопрос <span id="current-q">1</span> из 20</div>
-          </div>
-
-          <form id="quiz-form">
-            <!-- Questions will be injected here by JavaScript -->
-          </form>
-
-          <div class="nav-buttons">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              id="prev-btn"
-              disabled
-            >
-              ← Назад
-            </button>
-            <button type="button" class="btn" id="next-btn">Далее →</button>
-            <button type="button" class="btn hidden" id="finish-btn">
-              Завершить тест 🎯
-            </button>
-          </div>
-
-          <!-- Results Section -->
-          <div class="results" id="results">
-            <h2>🎉 Тест завершён!</h2>
-            <div class="score-display"><span id="final-score">0</span>/22</div>
-            <div class="level-badge" id="level-badge">B1</div>
-            <div class="level-description" id="level-desc"></div>
-
-            <h3 style="margin: 25px 0 15px">📊 Детали:</h3>
-            <div id="feedback-list"></div>
-
-            <button
-              class="btn"
-              onclick="location.reload()"
-              style="margin-top: 20px"
-            >
-              🔄 Пройти ещё раз
-            </button>
-            <button
-              class="btn btn-secondary"
-              onclick="window.print()"
-              style="margin-top: 10px"
-            >
-              🖨️ Сохранить результат
-            </button>
-          </div>
-        </div>
-        <!--  -->
       </div>
     </section>
 
@@ -444,7 +384,9 @@
       </div>
     </footer>
 
+    <script>
+
+    </script>
     <script src="scripts/chat.js"></script>
-    <script src="scripts/meme.js"></script>
   </body>
 </html>

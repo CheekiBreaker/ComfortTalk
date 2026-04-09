@@ -1295,9 +1295,6 @@ mark {
 .footer-contacts a:hover {
   color: var(--color-blue-400);
 }
-.contact{
-  min-height: auto;
-}
 
 .footer-bottom {
   border-top: 1px solid var(--color-gray-800);
